@@ -28,7 +28,7 @@ export default function ContactCTA() {
               <CardTitle>Call Us Direct</CardTitle>
             </CardHeader>
             <CardContent className="text-center">
-              <p className="mb-4">(555) 123-PORK</p>
+              <p className="mb-4">069 238 1255</p>
               <Button variant="secondary" className="w-full">
                 Call Now
               </Button>
@@ -54,7 +54,7 @@ export default function ContactCTA() {
               <CardTitle>Email Inquiry</CardTitle>
             </CardHeader>
             <CardContent className="text-center">
-              <p className="mb-4">info@belabelapork.co.za</p>
+              <p className="mb-4">info@cheesypig.co.za</p>
               <Button variant="secondary" className="w-full">
                 Send Email
               </Button>
@@ -69,7 +69,8 @@ export default function ContactCTA() {
               <MapPin className="h-4 w-4 mr-2 mt-0.5" />
               <div>
                 <strong>Farm Address:</strong>
-                <p>Bela Bela Area, Limpopo Province</p>
+                <p>Bela Bela, Limpopo Province</p>
+                <p>South Africa</p>
                 <p className="text-xs opacity-75">Exact location shared upon order</p>
               </div>
             </div>
@@ -85,7 +86,8 @@ export default function ContactCTA() {
         </div>
 
         <div className="mt-8 text-center text-sm opacity-75">
-          🌟 Current batch: 117.9kg available • Next batch: March 2024 • 🏆 100% Customer Satisfaction
+          🌟 Current batch: 117.9kg available • Next batch: August 2024 • 🏆 100% Customer Satisfaction • 🇿🇦 Proudly
+          South African
         </div>
       </div>
     </section>

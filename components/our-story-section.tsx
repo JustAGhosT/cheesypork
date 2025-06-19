@@ -40,7 +40,7 @@ export default function OurStorySection() {
         <div className="mx-auto max-w-2xl text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary">Our Sustainable Story</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            From market waste to premium meat - how we're revolutionizing sustainable farming in Bela Bela
+            From market waste to premium meat - how we're revolutionizing sustainable farming in Bela Bela, Limpopo
           </p>
         </div>
 
@@ -50,11 +50,13 @@ export default function OurStorySection() {
             <div className="space-y-4 text-muted-foreground">
               <p>
                 Our journey started with a simple observation: tons of fresh produce go to waste at local markets every
-                day, while commercial pig feed costs continue to rise. We saw an opportunity to solve both problems.
+                day in Bela Bela and surrounding areas, while commercial pig feed costs continue to rise. We saw an
+                opportunity to solve both problems.
               </p>
               <p>
-                Today, our heritage pigs thrive on fresh fruits, vegetables, and market surplus - creating premium meat
-                while reducing environmental waste. This isn't just farming; it's a sustainable food system in action.
+                Today, our heritage pigs thrive on fresh fruits, vegetables, and market surplus from local Limpopo
+                markets - creating premium meat while reducing environmental waste. This isn't just farming; it's a
+                sustainable food system in action for South Africa.
               </p>
               <p>
                 Every kilogram of our pork represents rescued produce, reduced waste, and a commitment to ethical,
