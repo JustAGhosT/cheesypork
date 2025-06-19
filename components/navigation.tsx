@@ -27,9 +27,13 @@ import { AuthDialog } from "@/components/auth-dialog"
 import { useAuth } from "@/lib/auth-context"
 import {
   ChefHat,
+  UtensilsCrossed,
+  Truck,
   Users,
   MapPin,
+  Calendar,
   ShoppingBag,
+  Star,
   Phone,
   Info,
   Briefcase,
@@ -39,29 +43,26 @@ import {
   User,
   Leaf,
   TrendingUp,
-  BookOpen,
-  Gift,
-  Package,
 } from "lucide-react"
 
-const productItems = [
+const menuItems = [
   {
-    title: "All Products",
-    href: "/products",
-    description: "Browse our complete selection of farm-fresh products.",
-    icon: ShoppingBag,
+    title: "Pork Products",
+    href: "/products/pork",
+    description: "Premium bacon, sausages, chops, and specialty cuts.",
+    icon: UtensilsCrossed,
   },
   {
-    title: "Bulk & Custom Orders",
-    href: "/products#bulk-orders",
-    description: "Wholesale pricing and custom packages for events.",
-    icon: Package,
+    title: "Artisanal Cheeses",
+    href: "/products/cheese",
+    description: "Hand-crafted cheeses made fresh on our farm.",
+    icon: ChefHat,
   },
   {
-    title: "Gift Packages",
-    href: "/products#bulk-orders",
-    description: "Curated meat and cheese packages for any occasion.",
-    icon: Gift,
+    title: "Bulk Orders",
+    href: "/bulk-orders",
+    description: "Wholesale pricing for restaurants and large orders.",
+    icon: Calendar,
   },
 ]
 
@@ -79,37 +80,31 @@ const platformItems = [
     icon: Briefcase,
   },
   {
-    title: "Cheese Making Process",
-    href: "/platform/cheese-making-process",
-    description: "Learn our artisan cheese-making techniques.",
-    icon: ChefHat,
-  },
-  {
-    title: "Market Intelligence",
+    title: "Market Data",
     href: "/platform/market-data",
-    description: "Pricing insights and market analysis tools.",
+    description: "Pricing insights and market intelligence (coming soon).",
     icon: TrendingUp,
   },
 ]
 
-const blogItems = [
+const shopItems = [
   {
-    title: "Farming Guides",
-    href: "/blog/market-waste-feed",
-    description: "Sustainable pig farming with market waste feed.",
-    icon: Leaf,
+    title: "Fresh Pork",
+    href: "/shop/pork",
+    description: "Bacon, chops, sausages, and premium cuts.",
+    icon: ShoppingBag,
   },
   {
-    title: "Business Tips",
-    href: "/blog/farm-profitability",
-    description: "Calculate your farm's true profitability.",
-    icon: TrendingUp,
+    title: "Farm Cheeses",
+    href: "/shop/cheeses",
+    description: "Hand-crafted cheeses made fresh on our farm.",
+    icon: Truck,
   },
   {
-    title: "Local Stories",
-    href: "/blog/farm-to-braai",
-    description: "Why local meat tastes and earns better.",
-    icon: Users,
+    title: "Gift Packages",
+    href: "/shop/gifts",
+    description: "Curated meat and cheese packages for any occasion.",
+    icon: Star,
   },
 ]
 
@@ -121,22 +116,49 @@ const aboutItems = [
     icon: Info,
   },
   {
-    title: "The Team",
-    href: "/about#team",
+    title: "The Farm",
+    href: "/farm",
+    description: "Visit our sustainable farm and meet our animals.",
+    icon: MapPin,
+  },
+  {
+    title: "Team",
+    href: "/team",
     description: "Meet the passionate people behind The Cheesy Pig.",
     icon: Users,
   },
   {
-    title: "Visit Our Farm",
-    href: "/about#farm",
-    description: "Plan a visit to our sustainable farm in Bela Bela.",
-    icon: MapPin,
-  },
-  {
     title: "Careers",
-    href: "/contact",
+    href: "/careers",
     description: "Join our team and be part of something special.",
     icon: Briefcase,
+  },
+]
+
+const communityItems = [
+  {
+    title: "Farming Tools",
+    href: "/community/tools",
+    description: "Exclusive calculators and analysis tools for farmers.",
+    icon: Shield,
+  },
+  {
+    title: "Business Opportunities",
+    href: "/community/opportunities",
+    description: "Partnership and franchise opportunities.",
+    icon: Briefcase,
+  },
+  {
+    title: "Community Network",
+    href: "/community/network",
+    description: "Connect with fellow farmers and partners.",
+    icon: Users,
+  },
+  {
+    title: "Learning Resources",
+    href: "/community/resources",
+    description: "Guides, courses, and educational materials.",
+    icon: Info,
   },
 ]
 
@@ -144,10 +166,6 @@ export default function Navigation() {
   const pathname = usePathname()
   const { user, signOut } = useAuth()
   const [authDialogOpen, setAuthDialogOpen] = React.useState(false)
-
-  const handlePhoneClick = () => {
-    window.open("tel:0692381255", "_self")
-  }
 
   return (
     <>
@@ -171,7 +189,20 @@ export default function Navigation() {
                 <NavigationMenuTrigger className="text-base">Products</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                    {productItems.map((item) => (
+                    {menuItems.map((item) => (
+                      <ListItem key={item.title} title={item.title} href={item.href} icon={item.icon}>
+                        {item.description}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-base">Shop</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                    {shopItems.map((item) => (
                       <ListItem key={item.title} title={item.title} href={item.href} icon={item.icon}>
                         {item.description}
                       </ListItem>
@@ -193,41 +224,21 @@ export default function Navigation() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-base">Blog & Resources</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="grid w-[600px] gap-3 p-4 md:grid-cols-2">
-                    <div className="row-span-3">
-                      <NavigationMenuLink asChild>
-                        <Link
-                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                          href="/blog"
-                        >
-                          <BookOpen className="h-6 w-6" />
-                          <div className="mb-2 mt-4 text-lg font-medium">Farm Smarter Blog</div>
-                          <p className="text-sm leading-tight text-muted-foreground">
-                            Free guides, success stories, and expert insights for sustainable farming.
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
-                    </div>
-                    {blogItems.map((item) => (
-                      <ListItem key={item.title} title={item.title} href={item.href} icon={item.icon}>
-                        {item.description}
-                      </ListItem>
-                    ))}
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
               {user && (
                 <NavigationMenuItem>
-                  <Link href="/community" legacyBehavior passHref>
-                    <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50">
-                      <Shield className="h-4 w-4 mr-2 text-primary" />
-                      Community
-                    </NavigationMenuLink>
-                  </Link>
+                  <NavigationMenuTrigger className="text-base bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20">
+                    <Shield className="h-4 w-4 mr-2 text-primary" />
+                    Community
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                      {communityItems.map((item) => (
+                        <ListItem key={item.title} title={item.title} href={item.href} icon={item.icon}>
+                          {item.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
                 </NavigationMenuItem>
               )}
 
@@ -256,9 +267,9 @@ export default function Navigation() {
 
           <div className="ml-auto flex items-center space-x-4">
             <ModeToggle />
-            <Button variant="ghost" size="sm" className="hidden sm:flex" onClick={handlePhoneClick}>
+            <Button variant="ghost" size="sm" className="hidden sm:flex">
               <Phone className="h-4 w-4 mr-2" />
-              069 238 1255
+              (555) 123-PORK
             </Button>
 
             {user ? (
@@ -290,17 +301,13 @@ export default function Navigation() {
                       <span>Community Dashboard</span>
                     </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/profile">
-                      <User className="mr-2 h-4 w-4" />
-                      <span>Profile</span>
-                    </Link>
+                  <DropdownMenuItem>
+                    <User className="mr-2 h-4 w-4" />
+                    <span>Profile</span>
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/settings">
-                      <Settings className="mr-2 h-4 w-4" />
-                      <span>Settings</span>
-                    </Link>
+                  <DropdownMenuItem>
+                    <Settings className="mr-2 h-4 w-4" />
+                    <span>Settings</span>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={signOut}>

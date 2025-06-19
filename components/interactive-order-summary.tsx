@@ -5,9 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Slider } from "@/components/ui/slider"
-import { Phone, MessageCircle, Minus, Plus, ShoppingCart, Calculator } from "lucide-react"
-import { CreativePhoneDisplay } from "./creative-phone-display"
-import DeliveryFeeCalculator from "./delivery-fee-calculator"
+import { Phone, MessageCircle, Minus, Plus, ShoppingCart, Truck, Calculator } from "lucide-react"
 
 interface OrderItem {
   id: string
@@ -108,7 +106,6 @@ const orderItems: OrderItem[] = [
 export default function InteractiveOrderSummary() {
   const [quantities, setQuantities] = React.useState<Record<string, number>>({})
   const [isAnimating, setIsAnimating] = React.useState<Record<string, boolean>>({})
-  const [showDeliveryCalculator, setShowDeliveryCalculator] = React.useState(false)
 
   const updateQuantity = (itemId: string, newQuantity: number) => {
     setIsAnimating((prev) => ({ ...prev, [itemId]: true }))
@@ -358,11 +355,7 @@ export default function InteractiveOrderSummary() {
           </div>
 
           {/* Order Summary Sidebar */}
-          <div className="lg:col-span-1 space-y-6">
-            {/* Creative Phone Display */}
-            <CreativePhoneDisplay />
-
-            {/* Order Summary */}
+          <div className="lg:col-span-1">
             <Card
               className={`border-primary/20 sticky top-8 transition-all duration-500 ${
                 hasItems ? "shadow-xl ring-2 ring-primary/20" : ""
@@ -437,15 +430,18 @@ export default function InteractiveOrderSummary() {
                       </div>
                     </div>
 
-                    {/* Delivery Calculator Toggle */}
-                    <Button
-                      variant="outline"
-                      className="w-full"
-                      onClick={() => setShowDeliveryCalculator(!showDeliveryCalculator)}
-                    >
-                      <Calculator className="mr-2 h-4 w-4" />
-                      {showDeliveryCalculator ? "Hide" : "Calculate"} Delivery
-                    </Button>
+                    {/* Delivery Options */}
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                      <div className="flex items-center mb-2">
+                        <Truck className="h-4 w-4 mr-2 text-blue-600" />
+                        <span className="font-medium text-blue-800">Delivery Options</span>
+                      </div>
+                      <div className="text-sm text-blue-700 space-y-1">
+                        <div>🚜 Farm Pickup: FREE</div>
+                        <div>🚛 Local Delivery (20km): R50</div>
+                        <div>📦 Bulk Orders (20kg+): Free delivery</div>
+                      </div>
+                    </div>
 
                     {/* Action Buttons */}
                     <div className="space-y-3">
@@ -473,9 +469,6 @@ export default function InteractiveOrderSummary() {
                 )}
               </CardContent>
             </Card>
-
-            {/* Delivery Calculator */}
-            {showDeliveryCalculator && hasItems && <DeliveryFeeCalculator orderValue={finalTotal} />}
           </div>
         </div>
 

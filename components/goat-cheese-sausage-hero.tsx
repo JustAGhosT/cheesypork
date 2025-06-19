@@ -6,6 +6,55 @@ import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight, Clock, Star, Phone, Calendar, ChefHat } from "lucide-react"
 import { useState, useEffect } from "react"
 
+const CheeseProcessAnimation = () => {
+  const [step, setStep] = useState(0)
+
+  const steps = [
+    { emoji: "🐐", text: "Fresh Goat Milk", time: "Start" },
+    { emoji: "🔥", text: "Heat to 85°C", time: "30 min" },
+    { emoji: "🍋", text: "Add Lemon Juice", time: "45 min" },
+    { emoji: "🧀", text: "Fresh Cheese Ready", time: "2-4 hrs" },
+    { emoji: "🌭", text: "Pork Sausages + Cheese", time: "Same Day" },
+  ]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStep((prev) => (prev + 1) % steps.length)
+    }, 2000)
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <div className="relative w-full h-32 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl border border-primary/20 overflow-hidden">
+      <div className="absolute inset-0 flex items-center justify-between px-6">
+        {steps.map((stepItem, index) => (
+          <div key={index} className="flex flex-col items-center">
+            <div
+              className={`text-3xl mb-2 transition-all duration-500 ${
+                index === step ? "scale-125 animate-bounce" : index < step ? "opacity-100" : "opacity-40"
+              }`}
+            >
+              {stepItem.emoji}
+            </div>
+            <div
+              className={`text-xs font-medium text-center ${index === step ? "text-primary" : "text-muted-foreground"}`}
+            >
+              <div>{stepItem.text}</div>
+              <div className="text-xs opacity-75">{stepItem.time}</div>
+            </div>
+            {index < steps.length - 1 && (
+              <div
+                className={`absolute top-6 w-8 h-0.5 ${index < step ? "bg-primary" : "bg-gray-300"}`}
+                style={{ left: `${20 + index * 20}%` }}
+              />
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 const PreorderTimer = () => {
   const [timeLeft, setTimeLeft] = useState({
     days: 45,
@@ -71,34 +120,17 @@ export default function GoatCheeseSausageHero() {
             </h1>
 
             <p className="text-xl text-muted-foreground leading-relaxed">
-              **Premium pork sausages stuffed with same-day fresh goat cheese!** We make the cheese fresh in the
-              morning, stuff into our heritage pork sausages in the afternoon. From goat milk to gourmet pork sausage in
-              under 8 hours.
+              **Premium pork sausages stuffed with same-day fresh goat cheese!** We make the cheese fresh in the morning
+              (2-4 hours), stuff into our heritage pork sausages in the afternoon. From goat milk to gourmet pork
+              sausage in under 8 hours.
             </p>
 
             <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 border border-primary/20">
               <h3 className="font-bold text-primary mb-4 flex items-center">
                 <ChefHat className="h-5 w-5 mr-2" />
-                Same-Day Fresh Promise
+                Same-Day Fresh Process
               </h3>
-              <div className="grid grid-cols-4 gap-4 text-center">
-                <div className="flex flex-col items-center">
-                  <div className="text-2xl mb-2">🐐</div>
-                  <div className="text-xs font-medium">Fresh Milk</div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="text-2xl mb-2">🧀</div>
-                  <div className="text-xs font-medium">Make Cheese</div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="text-2xl mb-2">🌭</div>
-                  <div className="text-xs font-medium">Stuff Sausages</div>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="text-2xl mb-2">📦</div>
-                  <div className="text-xs font-medium">Ready to Ship</div>
-                </div>
-              </div>
+              <CheeseProcessAnimation />
             </div>
 
             <div className="grid grid-cols-2 gap-4">
@@ -111,9 +143,9 @@ export default function GoatCheeseSausageHero() {
               </Card>
               <Card className="border-primary/20">
                 <CardContent className="pt-4 text-center">
-                  <div className="text-2xl font-bold text-secondary">Same Day</div>
-                  <div className="text-sm text-muted-foreground">Fresh made</div>
-                  <div className="text-xs text-blue-600 font-medium">Quality guarantee</div>
+                  <div className="text-2xl font-bold text-secondary">2-4 hrs</div>
+                  <div className="text-sm text-muted-foreground">Cheese ready</div>
+                  <div className="text-xs text-blue-600 font-medium">Same day fresh</div>
                 </CardContent>
               </Card>
             </div>
@@ -153,51 +185,59 @@ export default function GoatCheeseSausageHero() {
           </div>
 
           <div className="relative">
-            {/* Single clean product card */}
-            <div className="relative w-full max-w-md mx-auto">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 relative">
-                <div className="w-full h-full bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center relative p-8">
-                  {/* Top Left Badge */}
-                  <div className="absolute top-4 left-4 bg-orange-100 text-orange-800 text-xs px-3 py-2 rounded-lg font-bold border border-orange-200">
-                    <div className="font-bold">2-4hrs</div>
-                    <div className="text-xs font-normal">Cheese Ready</div>
-                  </div>
-
-                  {/* Top Right Badge */}
-                  <div className="absolute top-4 right-4 bg-red-500 text-white text-xs px-3 py-1 rounded-lg font-bold flex items-center gap-1">
-                    🔥 PREORDER
-                  </div>
-
-                  {/* Product Icons - Centered */}
-                  <div className="flex flex-col items-center justify-center space-y-6 mb-8">
-                    <div className="text-5xl">🐷</div>
-                    <div className="text-6xl">🌭</div>
-                    <div className="text-5xl">🧀</div>
-                  </div>
-
-                  {/* Product Title */}
-                  <div className="text-center mb-6">
-                    <h3 className="text-xl font-bold text-amber-800 mb-2">Goat Cheese Pork Sausages</h3>
-                    <p className="text-sm text-amber-600">Fresh cheese in heritage pork</p>
-                  </div>
-
-                  {/* Bottom Left Badge */}
-                  <div className="absolute bottom-4 left-4 bg-green-500 text-white text-xs px-3 py-1 rounded-lg font-bold flex items-center gap-1">
-                    🍐 SAME DAY
-                  </div>
-
-                  {/* Bottom Right Badge */}
-                  <div className="absolute bottom-4 right-4 bg-blue-100 text-blue-800 text-xs px-3 py-2 rounded-lg font-bold border border-blue-200 text-center">
-                    <div className="font-bold">R250/kg</div>
-                    <div className="text-xs font-normal">Premium Price</div>
-                  </div>
-
-                  {/* Side Badge */}
-                  <div className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-purple-500 text-white text-xs px-3 py-2 rounded-lg font-bold shadow-lg z-10">
-                    <div className="font-bold">UNIQUE</div>
-                    <div className="text-xs font-normal">Market First</div>
-                  </div>
+            <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 p-8 border-2 border-primary/30">
+              <div className="w-full h-full bg-white rounded-xl shadow-2xl flex flex-col items-center justify-center relative overflow-hidden">
+                {/* Main product showcase */}
+                <div className="text-center z-10">
+                  <div className="text-7xl mb-4">🌭</div>
+                  <div className="text-4xl mb-4">🧀</div>
+                  <div className="text-lg font-bold text-primary mb-2">Goat Cheese Pork Sausages</div>
+                  <div className="text-sm text-muted-foreground">Fresh cheese in heritage pork</div>
                 </div>
+
+                {/* Floating cheese process icons */}
+                <div className="absolute top-4 left-4 text-2xl animate-bounce" style={{ animationDelay: "0s" }}>
+                  🐐
+                </div>
+                <div className="absolute top-4 right-4 text-2xl animate-bounce" style={{ animationDelay: "0.5s" }}>
+                  🔥
+                </div>
+                <div className="absolute bottom-4 left-4 text-2xl animate-bounce" style={{ animationDelay: "1s" }}>
+                  🍋
+                </div>
+                <div className="absolute bottom-4 right-4 text-2xl animate-bounce" style={{ animationDelay: "1.5s" }}>
+                  ⏰
+                </div>
+
+                {/* Quality indicators */}
+                <div className="absolute -top-3 -right-3 bg-red-500 text-white text-xs px-3 py-1 rounded-full font-bold animate-pulse">
+                  PREORDER
+                </div>
+                <div className="absolute -bottom-3 -left-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full font-bold">
+                  SAME DAY
+                </div>
+              </div>
+            </div>
+
+            {/* Floating stats */}
+            <div className="absolute -top-4 -left-4 bg-white rounded-lg p-3 shadow-lg border border-orange-200">
+              <div className="text-center">
+                <div className="text-lg font-bold text-orange-600">2-4hrs</div>
+                <div className="text-xs text-orange-700">Cheese Ready</div>
+              </div>
+            </div>
+
+            <div className="absolute -bottom-4 -right-4 bg-white rounded-lg p-3 shadow-lg border border-green-200">
+              <div className="text-center">
+                <div className="text-lg font-bold text-green-600">R250/kg</div>
+                <div className="text-xs text-green-700">Premium Price</div>
+              </div>
+            </div>
+
+            <div className="absolute top-1/2 -right-6 bg-white rounded-lg p-3 shadow-lg border border-blue-200">
+              <div className="text-center">
+                <div className="text-lg font-bold text-blue-600">UNIQUE</div>
+                <div className="text-xs text-blue-700">Market First</div>
               </div>
             </div>
           </div>

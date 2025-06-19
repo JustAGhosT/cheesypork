@@ -18,7 +18,7 @@ export default function Footer() {
             </Link>
             <p className="text-muted-foreground max-w-md mb-4">
               Premium farm-fresh pork products and artisanal cheeses made using sustainable farming practices and
-              traditional methods in the heart of Bela Bela, Limpopo Province, South Africa.
+              traditional methods in the heart of Tennessee countryside.
             </p>
             <div className="flex space-x-4">
               <Facebook className="h-5 w-5 text-primary hover:text-secondary cursor-pointer" />
@@ -95,17 +95,17 @@ export default function Footer() {
               <div className="flex items-start">
                 <MapPin className="h-4 w-4 mr-2 mt-0.5 text-primary" />
                 <div>
-                  <p>Farm Road, Bela Bela</p>
-                  <p>Limpopo Province, South Africa</p>
+                  <p>123 Farm Road</p>
+                  <p>Countryside, TN 37000</p>
                 </div>
               </div>
               <div className="flex items-center">
                 <Phone className="h-4 w-4 mr-2 text-primary" />
-                <span>069 238 1255</span>
+                <span>(555) 123-PORK</span>
               </div>
               <div className="flex items-center">
                 <Mail className="h-4 w-4 mr-2 text-primary" />
-                <span>hello@cheesypig.co.za</span>
+                <span>hello@cheesypig.com</span>
               </div>
               <div className="flex items-start">
                 <Clock className="h-4 w-4 mr-2 mt-0.5 text-primary" />
@@ -121,7 +121,7 @@ export default function Footer() {
 
         <div className="border-t border-primary/20 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            © 2024 The Cheesy Pig. All rights reserved. Made with ❤️ in Bela Bela, South Africa.
+            © 2024 The Cheesy Pig. All rights reserved. Made with ❤️ in Tennessee.
           </p>
           <div className="flex space-x-6 text-sm text-muted-foreground mt-4 sm:mt-0">
             <Link href="/privacy" className="hover:text-primary">
