@@ -13,8 +13,8 @@ import InteractiveOrderSummary from "@/components/interactive-order-summary"
 export default function HomePage() {
   return (
     <main className="min-h-screen">
-      <GoatCheeseSausageHero />
       <CurrentStockInventory />
+      <GoatCheeseSausageHero />
       <PreorderBenefits />
       <OurStorySection />
       <TestimonialsSection />

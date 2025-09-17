@@ -83,7 +83,7 @@ const PreorderTimer = () => {
     <div className="flex items-center space-x-4 bg-red-50 border border-red-200 rounded-lg p-4">
       <Clock className="h-5 w-5 text-red-600" />
       <div>
-        <div className="font-semibold text-red-800">August Batch Preorder Closes:</div>
+        <div className="font-semibold text-red-800">November Batch Preorder Closes:</div>
         <div className="text-lg font-bold text-red-600">
           {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m
         </div>
@@ -104,7 +104,7 @@ export default function GoatCheeseSausageHero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="flex flex-wrap gap-3">
-              <Badge className="bg-red-500 text-white animate-pulse">🔥 AUGUST PREORDER</Badge>
+              <Badge className="bg-red-500 text-white animate-pulse">🔥 NOVEMBER PREORDER</Badge>
               <Badge className="bg-green-100 text-green-800">✨ NEW PRODUCT</Badge>
               <Badge className="bg-blue-100 text-blue-800">🧀 Same-Day Fresh</Badge>
             </div>
@@ -155,7 +155,7 @@ export default function GoatCheeseSausageHero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="group bg-red-600 hover:bg-red-700 text-white">
                 <Phone className="mr-2 h-4 w-4" />
-                Preorder August Batch - R200/kg
+                Preorder November Batch - R200/kg
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button

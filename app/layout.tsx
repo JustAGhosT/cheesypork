@@ -1,35 +1,39 @@
-import * as React from "react"
-import type { Metadata } from "next"
+import "@/styles/globals.css"
+import { Metadata } from "next"
 import { Inter } from "next/font/google"
-import "./globals.css"
-import Navigation from "@/components/navigation"
-import Footer from "@/components/footer"
 import { ThemeProvider } from "@/components/theme-provider"
 import { AuthProvider } from "@/lib/auth-context"
+import { CartProvider } from "@/lib/cart-context"
+import Navigation from "@/components/navigation"
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "The Cheesy Pig - Farm to Table Restaurant | Artisanal Cheeses & Local Cuisine",
-  description:
-    "Experience authentic farm-to-table dining at The Cheesy Pig. Featuring artisanal cheeses, locally-sourced ingredients, and traditional recipes in Bela Bela, South Africa.",
-  keywords: "farm to table, artisanal cheese, local restaurant, South African dining, organic food, sustainable dining",
-  generator: 'v0.dev'
+  title: {
+    default: "The Cheesy Pig | Premium Pork Products & Artisanal Cheeses",
+    template: "%s | The Cheesy Pig",
+  },
+  description: "Farm-to-table premium pork products and artisanal cheeses from our sustainable farm.",
+  keywords: ["pork", "cheese", "sustainable farming", "artisanal", "south africa"],
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <AuthProvider>
-            <Navigation />
-            {children}
-            <Footer />
+            <CartProvider>
+              <div className="relative min-h-screen flex flex-col">
+                <Navigation />
+                <main className="flex-1">{children}</main>
+                <footer className="border-t bg-muted/50">
+                  {/* Footer content */}
+                </footer>
+                <Toaster />
+              </div>
+            </CartProvider>
           </AuthProvider>
         </ThemeProvider>
       </body>
