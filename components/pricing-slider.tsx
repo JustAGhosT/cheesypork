@@ -95,7 +95,7 @@ export function PricingSlider() {
                 <CardTitle className="text-2xl">{plan.name}</CardTitle>
                 <CardDescription>{plan.description}</CardDescription>
                 <div className="mt-4">
-                  <span className="text-4xl font-bold">${calculatePrice(plan)}</span>
+                  <span className="text-4xl font-bold">R{calculatePrice(plan)}</span>
                   <span className="text-muted-foreground">/month</span>
                 </div>
               </CardHeader>

@@ -14,7 +14,7 @@ const productCategories = [
       {
         name: "Artisanal Bacon",
         description: "Thick-cut, hickory-smoked bacon from our pasture-raised pigs",
-        price: "$18/lb",
+        price: "R18/lb",
         rating: 4.9,
         badges: ["Signature", "Smoked Daily"],
         emoji: "🥓",
@@ -22,7 +22,7 @@ const productCategories = [
       {
         name: "Heritage Pork Chops",
         description: "Bone-in chops from our heritage breed pigs",
-        price: "$22/lb",
+        price: "R22/lb",
         rating: 4.8,
         badges: ["Heritage Breed", "Grass-Fed"],
         emoji: "🥩",
@@ -30,7 +30,7 @@ const productCategories = [
       {
         name: "Farm Sausages",
         description: "House-made sausages with herbs from our garden",
-        price: "$16/lb",
+        price: "R16/lb",
         rating: 4.7,
         badges: ["House Made", "No Preservatives"],
         emoji: "🌭",
@@ -44,7 +44,7 @@ const productCategories = [
       {
         name: "The Cheesy Pig Special",
         description: "Our signature aged cheddar with herbs from our garden",
-        price: "$24/lb",
+        price: "R24/lb",
         rating: 4.9,
         badges: ["Signature", "Award Winner"],
         emoji: "🧀",
@@ -52,7 +52,7 @@ const productCategories = [
       {
         name: "Smoky Gouda",
         description: "House-smoked gouda with natural wood smoke",
-        price: "$28/lb",
+        price: "R28/lb",
         rating: 4.8,
         badges: ["Smoked", "Limited Edition"],
         emoji: "🔥",
@@ -60,7 +60,7 @@ const productCategories = [
       {
         name: "Fresh Mozzarella",
         description: "Made daily from our grass-fed cow's milk",
-        price: "$20/lb",
+        price: "R20/lb",
         rating: 4.6,
         badges: ["Made Daily", "Organic"],
         emoji: "🐄",

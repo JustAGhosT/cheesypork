@@ -9,7 +9,7 @@ const testimonials = [
   {
     name: "Sarah Mitchell",
     role: "Food Blogger",
-    location: "Nashville, TN",
+    location: "Bela Bela, South Africa",
     image: "/placeholder.svg?height=60&width=60",
     content:
       "The Cheesy Pig is a hidden gem! Their artisanal cheeses are absolutely divine, and you can taste the love in every bite. The farm-to-table experience is authentic and unforgettable.",
@@ -20,7 +20,7 @@ const testimonials = [
   {
     name: "Marcus Rodriguez",
     role: "Local Resident",
-    location: "Countryside, TN",
+    location: "Bela Bela, South Africa",
     image: "/placeholder.svg?height=60&width=60",
     content:
       "Been coming here for 3 years and it never disappoints. The heritage pork chop is incredible, and knowing the ingredients come from right here makes it even better. True farm-to-table excellence!",
@@ -31,7 +31,7 @@ const testimonials = [
   {
     name: "Emily Chen",
     role: "Chef & Culinary Student",
-    location: "Memphis, TN",
+    location: "Pretoria, South Africa",
     image: "/placeholder.svg?height=60&width=60",
     content:
       "As a culinary student, I'm impressed by their commitment to traditional techniques and sustainable practices. The smoky bacon gouda is a masterpiece - I've tried to recreate it at home!",
@@ -42,7 +42,7 @@ const testimonials = [
   {
     name: "David & Lisa Thompson",
     role: "Anniversary Diners",
-    location: "Franklin, TN",
+    location: "Bela Bela, South Africa",
     image: "/placeholder.svg?height=60&width=60",
     content:
       "Celebrated our 25th anniversary here and it was magical. The atmosphere, the service, and especially the food created memories we'll treasure forever. The cheese selection is world-class!",
@@ -53,7 +53,7 @@ const testimonials = [
   {
     name: "Jake Williams",
     role: "Food Critic",
-    location: "Atlanta, GA",
+    location: "Johannesburg, South Africa",
     image: "/placeholder.svg?height=60&width=60",
     content:
       "In 20 years of food criticism, The Cheesy Pig stands out. Their commitment to local sourcing and traditional methods creates flavors you simply can't find elsewhere. A must-visit destination!",

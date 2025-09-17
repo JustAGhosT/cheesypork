@@ -8,7 +8,7 @@ const consultingServices = [
     description: "Complete digital transformation strategy and implementation",
     duration: "3-6 months",
     teamSize: "5-8 experts",
-    price: "Starting at $50,000",
+    price: "Starting at R50,000",
     features: [
       "Current state assessment",
       "Technology roadmap",
@@ -22,7 +22,7 @@ const consultingServices = [
     description: "Streamline operations and improve efficiency",
     duration: "2-4 months",
     teamSize: "3-5 experts",
-    price: "Starting at $25,000",
+    price: "Starting at R25,000",
     features: [
       "Process mapping",
       "Bottleneck identification",
@@ -36,7 +36,7 @@ const consultingServices = [
     description: "Develop comprehensive data and analytics strategy",
     duration: "1-3 months",
     teamSize: "2-4 experts",
-    price: "Starting at $15,000",
+    price: "Starting at R15,000",
     features: [
       "Data audit",
       "Analytics framework",

@@ -1,4 +1,4 @@
-import type React from "react"
+import * as React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
@@ -12,9 +12,9 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "The Cheesy Pig - Farm to Table Restaurant | Artisanal Cheeses & Local Cuisine",
   description:
-    "Experience authentic farm-to-table dining at The Cheesy Pig. Featuring artisanal cheeses, locally-sourced ingredients, and traditional recipes in Tennessee countryside.",
-  keywords: "farm to table, artisanal cheese, local restaurant, Tennessee dining, organic food, sustainable dining",
-    generator: 'v0.dev'
+    "Experience authentic farm-to-table dining at The Cheesy Pig. Featuring artisanal cheeses, locally-sourced ingredients, and traditional recipes in Bela Bela, South Africa.",
+  keywords: "farm to table, artisanal cheese, local restaurant, South African dining, organic food, sustainable dining",
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({

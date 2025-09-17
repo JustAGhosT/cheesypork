@@ -30,7 +30,7 @@ export default function CTASection() {
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
               <MapPin className="h-8 w-8 mb-3" />
               <h3 className="font-bold mb-2">Visit Our Farm Store</h3>
-              <p className="text-sm opacity-90">123 Farm Road, Countryside, TN</p>
+              <p className="text-sm opacity-90">123 Farm Road, Bela Bela, Limpopo</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
               <Clock className="h-8 w-8 mb-3" />
@@ -40,7 +40,7 @@ export default function CTASection() {
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
               <Phone className="h-8 w-8 mb-3" />
               <h3 className="font-bold mb-2">Order by Phone</h3>
-              <p className="text-sm opacity-90">(555) 123-PORK</p>
+              <p className="text-sm opacity-90">(014) 123-PORK</p>
             </div>
           </div>
 
@@ -55,7 +55,7 @@ export default function CTASection() {
           </div>
 
           <div className="mt-8 text-sm opacity-75">
-            🌟 Rated #1 Farm Store in Tennessee • 🏆 2024 Sustainable Farming Award Winner
+            🌟 Rated #1 Farm Store in Bela Bela, South Africa • 🏆 2024 Sustainable Farming Award Winner
           </div>
         </div>
       </div>

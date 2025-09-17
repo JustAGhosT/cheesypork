@@ -14,7 +14,7 @@ const currentStock = [
     unit: "kg",
     price: "R130-150",
     pricePerKg: 140,
-    features: ["No preservatives", "Market-waste fed", "Fresh or frozen"],
+    features: ["No preservatives", "Market-veg fed", "Fresh or frozen"],
     emoji: "🌭",
     popular: true,
     status: "In Stock",
@@ -97,7 +97,7 @@ export default function CurrentStockInventory() {
           </p>
           <div className="mt-6 inline-flex items-center bg-green-50 border border-green-200 rounded-full px-4 py-2">
             <span className="text-green-800 text-sm font-medium">
-              ✅ Total inventory value: R{totalStockValue.toLocaleString()}
+              ✅ Total inventory value: R{totalStockValue.toLocaleString('en-ZA')}
             </span>
           </div>
         </div>
@@ -156,7 +156,7 @@ export default function CurrentStockInventory() {
                 <div className="text-center">
                   <span className="text-2xl font-bold text-primary">{product.price}/kg</span>
                   <div className="text-xs text-muted-foreground">
-                    Total value: R{(product.stock * product.pricePerKg).toLocaleString()}
+                    Total value: R{(product.stock * product.pricePerKg).toLocaleString('en-ZA')}
                   </div>
                 </div>
 

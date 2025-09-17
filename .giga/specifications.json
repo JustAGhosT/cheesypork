@@ -1,0 +1,22 @@
+[
+  {
+    "fileName": "main-overview.mdc",
+    "description": "Complete system overview documenting the agricultural business platform architecture, zero-cost feed model, and key subsystems including inventory management, financial calculations, and sustainability tracking"
+  },
+  {
+    "fileName": "inventory-pricing-model.mdc",
+    "description": "Detailed documentation of the inventory management system, including bulk discount algorithms, dynamic pricing calculations, and stock level monitoring logic from current-stock-inventory.tsx"
+  },
+  {
+    "fileName": "financial-calculations.mdc",
+    "description": "Comprehensive documentation of financial algorithms including three-way profit distribution, ROI calculations, batch yield analysis, and labor cost formulas from robson-business-plan.tsx and financial-dashboard.tsx"
+  },
+  {
+    "fileName": "sustainability-metrics.mdc",
+    "description": "Documentation of waste impact tracking system, environmental metrics calculations, and circular economy model implementation from waste-impact-section.tsx and sustainability/page.tsx"
+  },
+  {
+    "fileName": "partnership-opportunity-system.mdc",
+    "description": "Detailed documentation of the partnership program logic, territory management, and investment structure calculations from opportunities/page.tsx"
+  }
+]
