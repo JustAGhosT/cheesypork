@@ -1,30 +1,45 @@
-# Next.js application design
+# Cheesypork
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+Cheesypork is a Next.js storefront and farm operations prototype. The current application is frontend-only: auth, cart, and checkout flows are mocked in the browser and persisted with `localStorage`.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/justaghosts-projects/v0-next-js-application-design)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/uonuWe3ubq0)
+## Current Hosting
 
-## Overview
+The project is prepared for Cloudflare Pages as a static Next.js export.
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+Cloudflare Pages settings:
 
-## Deployment
+| Setting | Value |
+| --- | --- |
+| Framework preset | Next.js (Static HTML Export) |
+| Build command | `pnpm build` |
+| Build output directory | `out` |
+| Production branch | `main` |
 
-Your project is live at:
+Cloudflare will create preview deployments for pull requests after the GitHub repository is connected.
 
-**[https://vercel.com/justaghosts-projects/v0-next-js-application-design](https://vercel.com/justaghosts-projects/v0-next-js-application-design)**
+## Local Development
 
-## Build your app
+```bash
+pnpm install
+pnpm dev
+```
 
-Continue building your app on:
+## Build
 
-**[https://v0.dev/chat/projects/uonuWe3ubq0](https://v0.dev/chat/projects/uonuWe3ubq0)**
+```bash
+pnpm build
+```
 
-## How It Works
+The build emits static files into `out/`.
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## Fullstack Direction
+
+The intended fullstack path is:
+
+- Supabase Postgres for products, customers, orders, order items, inventory, and admin data.
+- Supabase Auth for customer/admin accounts.
+- Supabase Storage for product images and uploaded assets if needed.
+- Cloudflare Pages for the frontend.
+- Supabase Edge Functions or Cloudflare Workers for server-side order processing, notifications, and payment callbacks.
+
+When backend features are added, keep secrets server-side. Browser-exposed variables should be limited to public Supabase values such as `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
